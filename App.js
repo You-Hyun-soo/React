@@ -1,11 +1,12 @@
-import React from 'react';  // 리엑트를 불러온다
+import React, { Component } from 'react';  // 리엑트를 불러온다
 // import - node.js에서 require('명칭')과 유사한 역할을 한다.
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 
 import User from './User.js';
 import Count from './Count.js';
 
+/*
 function App() {
 
   //const name = "aaa";
@@ -26,7 +27,7 @@ function App() {
     //{userName : "YHS", email : "###@gmail.com"}
     //<User userName={name} />
     <Count />
-  /*
+  
   <div className="App">
     <header className="App-header">
       <p>Hello React.js! {title}</p>
@@ -42,8 +43,20 @@ function App() {
       </p>
     </header>
   </div>
-  */
+  
   );
+} */
+
+// 위에 작성한 함수형 컴포넌트 작성 방식을 클래스형 컴포넌트 작성 방식으로 변경
+class App extends Component {
+
+  render(){
+    return(
+      <Count />
+      
+      );
+  }
 }
+
 
 export default App;
