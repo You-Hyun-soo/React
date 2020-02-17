@@ -1,0 +1,46 @@
+const array1 = [1, 2, 3, 4, 5];
+
+array1.map(x => x * 2);
+
+array1.map(function(x){
+	// x == 1	
+	// 1 * 2 = 2
+
+return x *2;
+});
+
+concat
+
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// expected output = Array  ['a', 'b', 'c', 'd', 'e', 'f'];
+
+react에서 배열다루기
+
+일반적으로 자바스크립트에서 배열 데이터를 가공 및 편집할 때 사용하는 메서드들에는 push, splice, unshift, pop 등이 있다.
+
+React 에서는 state 내부의 값을 직접적으로 수정해서는 안 되기 때문에 위의 메서드를 활용하기 부적합하다.
+
+React에서는 컴포넌트들 간의 많은 상속관계를 유지하기 위해서 '불변성'을 유지한다.
+
+array1 = [1,2,3,4,5]; => 불변성을 유지해야만 한다.(직접적으로 수정되면 안된다.)
+array2 = [1,2,10,3,4,15] => 새로운 배열로서 반환을 받아야 한다.
+
+이 state가 어디서 어떻게 쓰일 줄 알고 마음대로 수정하는가? 안됨!
+
+부모 컴포넌트가 리랜더링 될 때, 그 하위에 속한 자식 컴포넌트들도 리랜더링 된다는 특성을 잊지말자
+
+concat(), map(), filter() : 원본 데이터를 훼손하지 않고 목적에 맞는 새로운 배열로 데이터를 반환해주는 메서드
+
+information [{ name : "홍길동"}
+, {name : "아무개"}]
+
+information.concat({새로입력받은값})
+
+push()
+concat()을 이용해서 새로운 information을 만든것이다.
+
+info [ {홍길동}, {아무개}, {}, {}, {}] ㅅ
