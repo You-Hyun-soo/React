@@ -34,7 +34,7 @@ class PhoneForm extends Component {
 				
 			<div>{this.state.name}</div>
 			<div>{this.state.phone}</div>
-			<button>등록하기</button>
+			<button type ="submit">등록하기</button>
 				</center>
 			</form>
 		)
