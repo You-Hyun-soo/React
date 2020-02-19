@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 import PhoneForm from './components/PhoneForm';
 import PhoneInfoList from './components/PhoneInfoList'
+import axios from 'axios';
+
+
+// axios 
 
 class App extends Component {
 
@@ -61,8 +65,21 @@ class App extends Component {
       })
   }
 
+  // http 통신 및 백엔드 연동 테스트
+  onTest = () => {
+    axios.get('http://localhost:3000/test')
+    .then((response) => {
+      console.log("성공!",response);
+    })
+    .catch((error) => {
+      console.log("실패 또는 에러",error);
+    })
+  }
+
   render(){
     const { information } = this.state;
+
+    this.onTest();
 
     return(
 
